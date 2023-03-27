@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Year</h3>
+            <input id="first" name="year" type="number ">
+            <h3>Kilometers Driven</h3><br><input id="second" name="km_driven" required="required">
+            <h3>Mileage</h3><input id="third" name="mileage" required="required">
+            <h3>Engine Capacity</h3><br><input id="fourth" name="engine" required="required">
+            <h3>Maximum Power</h3><br><input id="fifth" name="max_power" required="required">
+            <h3>Seats</h3><br><input id="sixth" name="seats" required="required">
+            <h3>Seller type</h3><br><select name="Individual" id="seller" required="required">
+                <option value="Individual">Individual</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Trustmark_Dealer">Trustmark_Dealer</option>
+            </select>
+            <h3>Transmission Type</h3><br><select name="Manual" id="resea" required="required">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <h3>Fuel Type</h3><br><select name="Petrol" id="research" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="LPG">LPG</option>
+                <option value="Electric">Electric</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+        </form>
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+</body>
+</html>
